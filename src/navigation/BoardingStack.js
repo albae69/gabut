@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 
 const BoardingStack = () => {
   return (
-    <Stack.Navigator headerMode="none" initialRouteName="profile">
+    <Stack.Navigator headerMode="none" initialRouteName="cart">
       <Stack.Screen name="dashboard" component={Dashboard} />
       <Stack.Screen name="cart" component={Cart} />
       <Stack.Screen name="detail" component={Detail} />

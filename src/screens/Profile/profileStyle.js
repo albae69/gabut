@@ -6,7 +6,11 @@ export const profileStyle = StyleSheet.create({
     backgroundColor: 'white',
   },
   wrapProfile: {flexDirection: 'row', padding: 16, alignItems: 'center'},
-
+  title: {
+    fontFamily: 'Nunito-Bold',
+    fontSize: 18,
+    color: '#43D9BE',
+  },
   imgContainer: {alignItems: 'center', marginTop: 100},
   img: {
     height: 80,

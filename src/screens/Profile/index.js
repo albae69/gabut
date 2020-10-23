@@ -1,15 +1,27 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import Icons from 'react-native-vector-icons/AntDesign';
+import {useDispatch, useSelector} from 'react-redux';
+
+import {logout} from '../../../slice';
 
 import {profileStyle} from './profileStyle';
 
 const Profile = ({navigation}) => {
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.isLogin);
+  console.log(state);
+
   return (
     <View style={profileStyle.container}>
       <View style={profileStyle.wrapProfile}>
-        <Icons name="arrowleft" size={25} onPress={() => navigation.goBack()} />
-        <Text style={profileStyle.ml2}>PROFIL</Text>
+        <Icons
+          name="arrowleft"
+          size={25}
+          color="#43D9BE"
+          onPress={() => navigation.goBack()}
+        />
+        <Text style={[profileStyle.ml2, profileStyle.title]}>PROFIL</Text>
       </View>
       <View style={profileStyle.p}>
         <View style={profileStyle.imgContainer}>
@@ -29,13 +41,19 @@ const Profile = ({navigation}) => {
             <Text style={profileStyle.text2}>Rp.5,000,000,-</Text>
           </View>
           <View style={profileStyle.p2}>
-            <Text style={profileStyle.text1}>Wishlist</Text>
+            <TouchableOpacity>
+              <Text style={profileStyle.text1}>Wishlist</Text>
+            </TouchableOpacity>
           </View>
           <View style={profileStyle.p2}>
-            <Text style={profileStyle.text1}>Pengaturan</Text>
+            <TouchableOpacity>
+              <Text style={profileStyle.text1}>Pengaturan</Text>
+            </TouchableOpacity>
           </View>
           <View style={profileStyle.p5}>
-            <Text style={profileStyle.text1}>Keluar</Text>
+            <TouchableOpacity onPress={() => dispatch(logout())}>
+              <Text style={profileStyle.text1}>Keluar</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 
 import {login} from '../../../slice';
 
@@ -11,7 +11,16 @@ import {loginStyle} from './loginStyle';
 import {splashStyle} from '../Splash/splashStyle';
 
 const Login = ({navigation}) => {
+  const [loading, setLoading] = useState(false);
+
   const dispatch = useDispatch();
+
+  const logIn = () => {
+    setLoading(true);
+    setTimeout(() => {
+      dispatch(login());
+    }, 1000);
+  };
 
   return (
     <View style={loginStyle.container}>
@@ -31,7 +40,13 @@ const Login = ({navigation}) => {
             </Text>
           </View>
         </View>
-        <Button title="MASUK" onPress={() => dispatch(login())} />
+        <Button
+          title="MASUK"
+          onPress={logIn}
+          loadingSize="small"
+          loadingColor="white"
+          isLoading={loading}
+        />
       </View>
       <View style={loginStyle.wrapNoAcc}>
         <Text style={loginStyle.noAcc}>
