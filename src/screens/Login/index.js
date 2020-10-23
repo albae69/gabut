@@ -12,8 +12,6 @@ import {splashStyle} from '../Splash/splashStyle';
 
 const Login = ({navigation}) => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state.isLogin);
-  console.log(state);
 
   return (
     <View style={loginStyle.container}>
