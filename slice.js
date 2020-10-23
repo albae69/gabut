@@ -11,7 +11,13 @@ const initialState = {
 const slice = createSlice({
   name: 'slice',
   initialState,
-  reducers: {},
+  reducers: {
+    login: (state) => {
+      state.isLogin = true;
+    },
+  },
 });
+
+export const {login} = slice.actions;
 
 export default slice.reducer;

@@ -14,6 +14,7 @@ export const splashStyle = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     letterSpacing: 2,
+    textAlign: 'center',
   },
   subTitle: {
     fontSize: 16,
