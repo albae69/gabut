@@ -14,7 +14,6 @@ const UnboardingStack = () => {
   return (
     <Stack.Navigator
       headerMode="none"
-      initialRouteName="forgotPassword"
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}>

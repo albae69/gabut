@@ -17,9 +17,11 @@ const ForgotPassword = ({navigation}) => {
           <Text style={[splashStyle.subTitle, {color: '#43D9BE'}]}>
             GATAU, GABUT AJA.
           </Text>
-          <Text style={{color: 'lightgray', marginTop: 20}}>
-            link reset password akan dikirm ke email anda.
-          </Text>
+          <View style={{marginTop: 20}}>
+            <Text style={{color: 'lightgray'}}>
+              link reset password akan dikirm ke email anda.
+            </Text>
+          </View>
           <View style={forgotPasswordStyle.inputContainer}>
             <TextInput
               placeholder="email"
