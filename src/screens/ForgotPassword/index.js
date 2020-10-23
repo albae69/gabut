@@ -1,10 +1,36 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {View, Text} from 'react-native';
 
-import {forgotPasswordStlye} from './forgotPasswordStyle';
+import TextInput from '../../components/TextInput';
+import Button from '../../components/Button';
 
-const ForgotPassword = () => {
-  return <Text>ForgotPassword</Text>;
+import {loginStyle} from '../Login/loginStyle';
+import {splashStyle} from '../Splash/splashStyle';
+import {forgotPasswordStyle} from './forgotPasswordStyle';
+
+const ForgotPassword = ({navigation}) => {
+  return (
+    <View style={loginStyle.container}>
+      <View style={loginStyle.alignCenter}>
+        <View style={splashStyle.brand}>
+          <Text style={[splashStyle.title, {color: '#43D9BE'}]}>GABUTPOS</Text>
+          <Text style={[splashStyle.subTitle, {color: '#43D9BE'}]}>
+            GATAU, GABUT AJA.
+          </Text>
+          <Text style={{color: 'lightgray', marginTop: 20}}>
+            link reset password akan dikirm ke email anda.
+          </Text>
+          <View style={forgotPasswordStyle.inputContainer}>
+            <TextInput
+              placeholder="email"
+              containerStyle={forgotPasswordStyle.inputContainer}
+            />
+            <Button title="KIRIM" containerStyle={{marginTop: 20}} />
+          </View>
+        </View>
+      </View>
+    </View>
+  );
 };
 
 export default ForgotPassword;

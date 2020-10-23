@@ -29,7 +29,8 @@ const Register = ({navigation}) => {
           <Text
             style={{color: '#43D9BE'}}
             onPress={() => navigation.navigate('login')}>
-            Daftar
+            {' '}
+            Masuk
           </Text>
         </Text>
       </View>
