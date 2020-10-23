@@ -6,8 +6,9 @@ import Button from '../../components/Button';
 
 import {loginStyle} from '../Login/loginStyle';
 import {splashStyle} from '../Splash/splashStyle';
+import {forgotPasswordStyle} from './forgotPasswordStyle';
 
-const Register = ({navigation}) => {
+const ForgotPassword = ({navigation}) => {
   return (
     <View style={loginStyle.container}>
       <View style={loginStyle.alignCenter}>
@@ -16,26 +17,22 @@ const Register = ({navigation}) => {
           <Text style={[splashStyle.subTitle, {color: '#43D9BE'}]}>
             GATAU, GABUT AJA.
           </Text>
-          <View style={loginStyle.inputContainer}>
-            <TextInput placeholder="email" />
-            <TextInput placeholder="password" secureTextEntry={true} />
+          <View style={{marginTop: 20}}>
+            <Text style={{color: 'lightgray'}}>
+              link reset password akan dikirm ke email anda.
+            </Text>
+          </View>
+          <View style={forgotPasswordStyle.inputContainer}>
+            <TextInput
+              placeholder="email"
+              containerStyle={forgotPasswordStyle.inputContainer}
+            />
+            <Button title="KIRIM" containerStyle={{marginTop: 20}} />
           </View>
         </View>
-        <Button title="DAFTAR" />
-      </View>
-      <View style={loginStyle.wrapNoAcc}>
-        <Text style={loginStyle.noAcc}>
-          sudah punya akun?
-          <Text
-            style={{color: '#43D9BE'}}
-            onPress={() => navigation.navigate('login')}>
-            {' '}
-            Masuk
-          </Text>
-        </Text>
       </View>
     </View>
   );
 };
 
-export default Register;
+export default ForgotPassword;

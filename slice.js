@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
-  isLogin: false,
+  isLogin: true,
   cart: null,
   data: null,
   user: null,
@@ -15,9 +15,12 @@ const slice = createSlice({
     login: (state) => {
       state.isLogin = true;
     },
+    logout: (state) => {
+      state.isLogin = false;
+    },
   },
 });
 
-export const {login} = slice.actions;
+export const {login, logout} = slice.actions;
 
 export default slice.reducer;
