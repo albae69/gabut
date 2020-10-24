@@ -11,9 +11,11 @@ const ButtonComponent = ({
   loadingSize,
   loadingColor,
   isLoading,
+  activeOpacity,
 }) => {
   return (
     <TouchableOpacity
+      activeOpacity={activeOpacity}
       onPress={onPress}
       style={[buttonStyle.container, containerStyle]}>
       {isLoading ? (

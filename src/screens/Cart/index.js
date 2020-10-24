@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, ScrollView, FlatList} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 
 import Button from '../../components/Button';
 import {Cart as CartCard} from '../../components/Card';
@@ -7,7 +7,7 @@ import {Cart as CartCard} from '../../components/Card';
 import {cartStyle} from './cartStyle';
 
 const Cart = () => {
-  const data = [
+  let data = [
     {
       id: 0,
       title: 'Baterai Laptop Dell Latitude e6410',
@@ -57,7 +57,7 @@ const Cart = () => {
       <View style={cartStyle.wrapCard}>
         <FlatList
           data={data}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={(item) => <CartCard {...item.item} />}
         />
       </View>
