@@ -9,7 +9,7 @@ import UnboardingStack from './UnboardingStack';
 
 const Navigation = () => {
   const AuthStack = () => {
-    const isLogin = useSelector((state) => state.isLogin);
+    const isLogin = useSelector((state) => state.auth.isLogin);
     return isLogin ? <BoardingStack /> : <UnboardingStack />;
   };
 

@@ -1,17 +1,19 @@
 import React from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
-
-import BackButtonIcons from '../../assets/icons/arrowLeft.svg';
+import Icons from 'react-native-vector-icons/AntDesign';
+import {useNavigation} from '@react-navigation/native';
 
 import {backButtonStyle} from './backButtonStyle';
 
-const BackButton = ({title}) => {
+const BackButton = ({title, size, color, titleStyle}) => {
+  const navigation = useNavigation();
+
   return (
     <View style={backButtonStyle.container}>
-      <TouchableOpacity style={{backgroundColor: 'red'}}>
-        <BackButtonIcons heigt={30} width={30} />
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Icons name="arrowleft" size={size} color={color} />
       </TouchableOpacity>
-      <Text>{title}</Text>
+      <Text style={[backButtonStyle.title, titleStyle]}>{title}</Text>
     </View>
   );
 };

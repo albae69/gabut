@@ -5,16 +5,18 @@ import Dashboard from '../screens/Dashboard';
 import Detail from '../screens/Detail';
 import Cart from '../screens/Cart';
 import Profile from '../screens/Profile';
+import Search from '../screens/Search';
 
 const Stack = createStackNavigator();
 
 const BoardingStack = () => {
   return (
-    <Stack.Navigator headerMode="none" initialRouteName="cart">
+    <Stack.Navigator headerMode="none">
       <Stack.Screen name="dashboard" component={Dashboard} />
       <Stack.Screen name="cart" component={Cart} />
       <Stack.Screen name="detail" component={Detail} />
       <Stack.Screen name="profile" component={Profile} />
+      <Stack.Screen name="search" component={Search} />
     </Stack.Navigator>
   );
 };

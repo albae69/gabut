@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import Icons from 'react-native-vector-icons/AntDesign';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {logout} from '../../../slice';
+import {logout} from '../../../authSlice';
 
 import {profileStyle} from './profileStyle';
 

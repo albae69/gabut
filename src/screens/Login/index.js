@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 
-import {login} from '../../../slice';
+import {login} from '../../../authSlice';
 
 import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
