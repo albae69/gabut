@@ -36,4 +36,10 @@ export const cartStyle = StyleSheet.create({
     fontFamily: 'Nunito-Bold',
     fontSize: 18,
   },
+  bottomNavContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
 });

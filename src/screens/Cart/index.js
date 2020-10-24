@@ -1,12 +1,13 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, FlatList, Dimensions} from 'react-native';
 
 import Button from '../../components/Button';
+import BottomNav from '../../components/BottomNav';
 import {Cart as CartCard} from '../../components/Card';
 
 import {cartStyle} from './cartStyle';
 
-const Cart = () => {
+const Cart = ({navigation}) => {
   let data = [
     {
       id: 0,
@@ -53,12 +54,18 @@ const Cart = () => {
           titleStyle={cartStyle.btnTitleStyle}
         />
       </View>
-
       <View style={cartStyle.wrapCard}>
         <FlatList
           data={data}
           keyExtractor={(item) => item.id.toString()}
           renderItem={(item) => <CartCard {...item.item} />}
+        />
+      </View>
+      <View style={cartStyle.bottomNavContainer}>
+        <BottomNav
+          homePress={() => navigation.navigate('dashboard')}
+          cartPress={() => navigation.navigate('cart')}
+          cartColor="#5C88CB"
         />
       </View>
     </View>

@@ -33,11 +33,11 @@ export const cardCartStyle = StyleSheet.create({
     marginRight: 5,
   },
   title: {
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Nunito-Regular',
     fontSize: 18,
     width: width / 3,
   },
-  price: {fontFamily: 'Nunito-Regular', fontSize: 14},
+  price: {fontFamily: 'Nunito-Bold', fontSize: 14},
   qty: {
     fontFamily: 'Nunito-Bold',
     fontSize: 18,

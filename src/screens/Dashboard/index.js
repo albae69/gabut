@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Dimensions} from 'react-native';
 import {useSelector} from 'react-redux';
 
 import Header from '../../components/Header';
+import BottomNav from '../../components/BottomNav';
 
 import {dashboardStyle} from './dashboardStyle';
 
@@ -15,6 +16,13 @@ const Dashboard = ({navigation}) => {
         navigation={navigation}
         route={state.auth.isLogin ? 'profile' : 'login'}
       />
+      <View style={dashboardStyle.btnNavContainer}>
+        <BottomNav
+          homePress={() => navigation.navigate('dashboard')}
+          homeColor="#5C88CB"
+          cartPress={() => navigation.navigate('cart')}
+        />
+      </View>
     </View>
   );
 };
