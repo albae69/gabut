@@ -8,10 +8,7 @@ import {swiperStyle} from './swiperStyle';
 const SwiperComponent = () => {
   return (
     <View style={swiperStyle.container}>
-      <Swiper
-        autoplay={true}
-        autoplayTimeout={5}
-        dotColor="white"
+      <Swiper autoplay={true} autoplayTimeout={5} dotColor="white">
         <Image source={img} style={swiperStyle.img} />
         <Image source={img} style={swiperStyle.img} />
         <Image source={img} style={swiperStyle.img} />
