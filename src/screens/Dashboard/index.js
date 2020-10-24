@@ -4,8 +4,11 @@ import {useSelector} from 'react-redux';
 
 import Header from '../../components/Header';
 import BottomNav from '../../components/BottomNav';
+import SwiperComponent from '../../components/Swiper';
 
 import {dashboardStyle} from './dashboardStyle';
+
+const {width} = Dimensions.get('window');
 
 const Dashboard = ({navigation}) => {
   const state = useSelector((state) => state);
@@ -16,6 +19,7 @@ const Dashboard = ({navigation}) => {
         navigation={navigation}
         route={state.auth.isLogin ? 'profile' : 'login'}
       />
+      <SwiperComponent />
       <View style={dashboardStyle.btnNavContainer}>
         <BottomNav
           homePress={() => navigation.navigate('dashboard')}
