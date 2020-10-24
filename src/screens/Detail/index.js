@@ -53,7 +53,10 @@ const Detail = ({navigation}) => {
         <Button
           title="TAMBAHKAN KE KERANJANG"
           titleStyle={detailStyle.btnTitle}
-          containerStyle={[detailStyle.btn1, {width: width * 0.6}]}
+          containerStyle={[
+            detailStyle.btn1,
+            {width: width * 0.6, backgroundColor: '#5C88CB'},
+          ]}
           onPress={() => navigation.navigate('cart')}
           activeOpacity={0.9}
         />

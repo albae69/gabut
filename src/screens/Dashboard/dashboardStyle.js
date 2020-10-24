@@ -1,5 +1,8 @@
 import {StyleSheet} from 'react-native';
 
 export const dashboardStyle = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
 });
