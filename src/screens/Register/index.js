@@ -12,11 +12,12 @@ const Register = ({navigation}) => {
     <View style={loginStyle.container}>
       <View style={loginStyle.alignCenter}>
         <View style={splashStyle.brand}>
-          <Text style={[splashStyle.title, {color: '#43D9BE'}]}>GABUTPOS</Text>
+          <Text style={[splashStyle.title, {color: '#43D9BE'}]}>GABUT</Text>
           <Text style={[splashStyle.subTitle, {color: '#43D9BE'}]}>
             GATAU, GABUT AJA.
           </Text>
           <View style={loginStyle.inputContainer}>
+            <TextInput placeholder="fullname" />
             <TextInput placeholder="email" />
             <TextInput placeholder="password" secureTextEntry={true} />
           </View>

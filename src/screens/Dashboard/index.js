@@ -43,10 +43,7 @@ const Dashboard = ({navigation}) => {
 
   return (
     <View style={dashboardStyle.container}>
-      <View style={dashboardStyle.itemContainer}>
-        <Item />
-      </View>
-      {/* <Header
+      <Header
         navigation={navigation}
         route={state.auth.isLogin ? 'profile' : 'login'}
       />
@@ -54,7 +51,7 @@ const Dashboard = ({navigation}) => {
       <SwiperComponent />
 
       <ScrollView
-        style={{flex: 1, margin: 5}}
+        style={{margin: 5, height: 400}}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         decelerationRate="fast"
@@ -71,13 +68,39 @@ const Dashboard = ({navigation}) => {
         ))}
       </ScrollView>
 
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        decelerationRate={0}
+        snapToInterval={width - 200}
+        snapToAlignment="start"
+        contentInset={{
+          top: 30,
+          left: 0,
+          bottom: 30,
+          right: 0,
+        }}>
+        <View style={dashboardStyle.itemContainer}>
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+          <Item />
+        </View>
+      </ScrollView>
+
       <View style={dashboardStyle.btnNavContainer}>
         <BottomNav
           homePress={() => navigation.navigate('dashboard')}
           homeColor="#5C88CB"
           cartPress={() => navigation.navigate('cart')}
         />
-      </View> */}
+      </View>
     </View>
   );
 };
