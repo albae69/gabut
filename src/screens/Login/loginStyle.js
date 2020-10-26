@@ -20,7 +20,7 @@ export const loginStyle = StyleSheet.create({
     color: '#43D9BE',
     fontFamily: 'Nunito-Regular',
   },
-  wrapNoAcc: {position: 'absolute', bottom: 20},
+  wrapNoAcc: {flex: 1, justifyContent: 'flex-end', marginBottom: 20},
   noAcc: {
     fontFamily: 'Nunito-Regular',
     color: 'black',
