@@ -5,11 +5,11 @@ import {useSelector} from 'react-redux';
 import Header from '../../components/Header';
 import BottomNav from '../../components/BottomNav';
 import SwiperComponent from '../../components/Swiper';
-import Category from '../../components/Card/Category';
+import {Category, Item} from '../../components/Card';
 
 import {dashboardStyle} from './dashboardStyle';
 import laptop from '../../assets/images/laptop.jpg';
-import gaming from '../../assets/images/gaming.png';
+import gaming from '../../assets/images/gaming.jpg';
 import pc from '../../assets/images/pc.jpg';
 import smartphone from '../../assets/images/smartphone.jpg';
 
@@ -43,17 +43,21 @@ const Dashboard = ({navigation}) => {
 
   return (
     <View style={dashboardStyle.container}>
-      <Header
+      <View style={dashboardStyle.itemContainer}>
+        <Item />
+      </View>
+      {/* <Header
         navigation={navigation}
         route={state.auth.isLogin ? 'profile' : 'login'}
       />
 
       <SwiperComponent />
+
       <ScrollView
-        style={{flex: 1}}
+        style={{flex: 1, margin: 5}}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        decelerationRate={0}
+        decelerationRate="fast"
         snapToInterval={width - 180}
         snapToAlignment="start"
         contentInset={{
@@ -66,13 +70,14 @@ const Dashboard = ({navigation}) => {
           <Category name={item.name} src={item.img} key={item.id} />
         ))}
       </ScrollView>
+
       <View style={dashboardStyle.btnNavContainer}>
         <BottomNav
           homePress={() => navigation.navigate('dashboard')}
           homeColor="#5C88CB"
           cartPress={() => navigation.navigate('cart')}
         />
-      </View>
+      </View> */}
     </View>
   );
 };

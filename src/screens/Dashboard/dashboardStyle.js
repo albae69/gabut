@@ -11,4 +11,10 @@ export const dashboardStyle = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
   },
+  itemContainer: {
+    padding: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+  },
 });

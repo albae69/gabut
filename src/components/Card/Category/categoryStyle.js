@@ -5,7 +5,7 @@ export const categortStyle = StyleSheet.create({
   container: {
     height: 120,
     width: width - 200,
-    margin: 10,
+    margin: 8,
   },
   category: {
     fontFamily: 'Nunito-Bold',
