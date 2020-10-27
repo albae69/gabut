@@ -4,11 +4,11 @@ const {width} = Dimensions.get('window');
 
 export const swiperStyle = StyleSheet.create({
   container: {
-    height: 250,
+    height: 200,
     marginBottom: 10,
   },
   img: {
-    height: 250,
+    height: 200,
     width: width,
     resizeMode: 'cover',
   },

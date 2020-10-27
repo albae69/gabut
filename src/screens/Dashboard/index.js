@@ -47,46 +47,28 @@ const Dashboard = ({navigation}) => {
         navigation={navigation}
         route={state.auth.isLogin ? 'profile' : 'login'}
       />
+      <ScrollView>
+        <SwiperComponent />
 
-      <SwiperComponent />
+        <ScrollView
+          style={{margin: 5}}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          decelerationRate="fast"
+          snapToInterval={width - 180}
+          snapToAlignment="start"
+          contentInset={{
+            top: 0,
+            left: 30,
+            bottom: 0,
+            right: 30,
+          }}>
+          {category.map((item) => (
+            <Category name={item.name} src={item.img} key={item.id} />
+          ))}
+        </ScrollView>
 
-      <ScrollView
-        style={{margin: 5, height: 400}}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        decelerationRate="fast"
-        snapToInterval={width - 180}
-        snapToAlignment="start"
-        contentInset={{
-          top: 0,
-          left: 30,
-          bottom: 0,
-          right: 30,
-        }}>
-        {category.map((item) => (
-          <Category name={item.name} src={item.img} key={item.id} />
-        ))}
-      </ScrollView>
-
-      <ScrollView
-        showsHorizontalScrollIndicator={false}
-        decelerationRate={0}
-        snapToInterval={width - 200}
-        snapToAlignment="start"
-        contentInset={{
-          top: 30,
-          left: 0,
-          bottom: 30,
-          right: 0,
-        }}>
         <View style={dashboardStyle.itemContainer}>
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
-          <Item />
           <Item />
           <Item />
           <Item />

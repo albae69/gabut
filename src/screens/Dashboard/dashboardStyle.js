@@ -15,5 +15,6 @@ export const dashboardStyle = StyleSheet.create({
     justifyContent: 'space-between',
     flexWrap: 'wrap',
     padding: 10,
+    marginBottom: 60,
   },
 });
