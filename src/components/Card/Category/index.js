@@ -6,7 +6,10 @@ import {categortStyle} from './categoryStyle';
 const Category = ({name, src}) => {
   return (
     <View style={categortStyle.container}>
-      <ImageBackground source={src} style={{flex: 1}}>
+      <ImageBackground
+        source={src}
+        style={{flex: 1}}
+        imageStyle={{borderRadius: 8}}>
         <Text style={categortStyle.category}>{name}</Text>
       </ImageBackground>
     </View>

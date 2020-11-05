@@ -13,7 +13,7 @@ const ForgotPassword = ({navigation}) => {
     <View style={loginStyle.container}>
       <View style={loginStyle.alignCenter}>
         <View style={splashStyle.brand}>
-          <Text style={[splashStyle.title, {color: '#43D9BE'}]}>GABUTPOS</Text>
+          <Text style={[splashStyle.title, {color: '#43D9BE'}]}>GABUT</Text>
           <Text style={[splashStyle.subTitle, {color: '#43D9BE'}]}>
             GATAU, GABUT AJA.
           </Text>

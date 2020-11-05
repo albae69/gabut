@@ -16,13 +16,13 @@ const Navigation = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // setLoading(true);
-    // const load = setTimeout(() => {
-    //   setLoading(false);
-    // }, 1000);
-    // return () => {
-    //   clearTimeout(load);
-    // };
+    setLoading(true);
+    const load = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => {
+      clearTimeout(load);
+    };
   }, []);
 
   return (
