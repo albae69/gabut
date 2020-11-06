@@ -11,18 +11,4 @@ export const headerStyle = StyleSheet.create({
     justifyContent: 'center',
   },
   account: {position: 'absolute', right: 20},
-  input: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    height: 30,
-    width: 200,
-    backgroundColor: 'white',
-    elevation: 8,
-    borderRadius: 8,
-  },
-  placeholder: {
-    fontFamily: 'Nunito-Family',
-    fontSize: 12,
-    color: 'gray',
-  },
 });

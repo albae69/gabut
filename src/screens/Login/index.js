@@ -19,6 +19,7 @@ const Login = ({navigation}) => {
     setLoading(true);
     setTimeout(() => {
       dispatch(login());
+      navigation.navigate('dashboard');
     }, 1000);
   };
 
