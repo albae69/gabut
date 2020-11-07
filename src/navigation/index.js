@@ -1,18 +1,34 @@
 import React, {useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {useSelector} from 'react-redux';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import Splash from '../screens/Splash';
 
-import BoardingStack from './BoardingStack';
-import UnboardingStack from './UnboardingStack';
+import Login from '../screens/Login';
+import Register from '../screens/Register';
+import ForgotPassword from '../screens/ForgotPassword';
+import Dashboard from '../screens/Dashboard';
+import Detail from '../screens/Detail';
+import Cart from '../screens/Cart';
+import Profile from '../screens/Profile';
+
+const Stack = createStackNavigator();
+
+const BoardingStack = () => {
+  return (
+    <Stack.Navigator headerMode="none">
+      <Stack.Screen name="dashboard" component={Dashboard} />
+      <Stack.Screen name="cart" component={Cart} />
+      <Stack.Screen name="detail" component={Detail} />
+      <Stack.Screen name="profile" component={Profile} />
+      <Stack.Screen name="login" component={Login} />
+      <Stack.Screen name="register" component={Register} />
+      <Stack.Screen name="forgotPassword" component={ForgotPassword} />
+    </Stack.Navigator>
+  );
+};
 
 const Navigation = () => {
-  const AuthStack = () => {
-    const isLogin = useSelector((state) => state.auth.isLogin);
-    return isLogin ? <BoardingStack /> : <UnboardingStack />;
-  };
-
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -27,7 +43,7 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      {loading ? <Splash /> : <AuthStack />}
+      {loading ? <Splash /> : <BoardingStack />}
     </NavigationContainer>
   );
 };

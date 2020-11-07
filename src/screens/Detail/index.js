@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, ImageBackground, Dimensions} from 'react-native';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useSelector} from 'react-redux';
 
 import BackButton from '../../components/BackButton';
 import Button from '../../components/Button';
@@ -12,6 +13,7 @@ const {height, width} = Dimensions.get('window');
 
 const Detail = ({navigation}) => {
   const [wishList, setWishList] = useState(false);
+  const isLogin = useSelector((state) => state.auth.isLogin);
 
   return (
     <View style={detailStyle.container}>
@@ -24,13 +26,25 @@ const Detail = ({navigation}) => {
           size={25}
           titleStyle={{color: 'white'}}
         />
-        <Icons
-          name="heart"
-          size={25}
-          color={wishList ? 'red' : 'white'}
-          onPress={() => setWishList(!wishList)}
-          style={{position: 'absolute', bottom: 20, right: 20}}
-        />
+        {isLogin ? (
+          <Icons
+            name="heart"
+            size={25}
+            color={wishList ? 'red' : 'white'}
+            onPress={() => setWishList(!wishList)}
+            style={{position: 'absolute', bottom: 20, right: 20}}
+          />
+        ) : (
+          <Icons
+            name="heart"
+            size={25}
+            color="white"
+            style={{position: 'absolute', bottom: 20, right: 20}}
+            onPress={() =>
+              alert('you must login before add item into wishlist')
+            }
+          />
+        )}
       </ImageBackground>
       <View style={detailStyle.descContainer}>
         <Text style={detailStyle.title}>Title</Text>
