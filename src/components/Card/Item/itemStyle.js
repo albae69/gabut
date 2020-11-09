@@ -25,11 +25,11 @@ export const itemStyle = StyleSheet.create({
     width: width * 0.36,
     fontFamily: 'Nunito-Regular',
     color: 'gray',
-    fontSize: 14,
+    fontSize: 12,
   },
   price: {
     fontFamily: 'Nunito-Bold',
     color: 'black',
-    fontSize: 16,
+    fontSize: 14,
   },
 });

@@ -3,15 +3,14 @@ import {StyleSheet, Dimensions} from 'react-native';
 const {width} = Dimensions.get('window');
 export const categortStyle = StyleSheet.create({
   container: {
-    height: 120,
+    height: 100,
     width: width - 200,
     margin: 8,
   },
   category: {
     fontFamily: 'Nunito-Bold',
-    fontSize: 18,
+    fontSize: 14,
     color: 'white',
-    fontWeight: 'bold',
     padding: 10,
   },
 });

@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {
+  CardStyleInterpolators,
+  createStackNavigator,
+} from '@react-navigation/stack';
 
 import Splash from '../screens/Splash';
 
@@ -16,7 +19,11 @@ const Stack = createStackNavigator();
 
 const BoardingStack = () => {
   return (
-    <Stack.Navigator headerMode="none">
+    <Stack.Navigator
+      headerMode="none"
+      screenOptions={{
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+      }}>
       <Stack.Screen name="dashboard" component={Dashboard} />
       <Stack.Screen name="cart" component={Cart} />
       <Stack.Screen name="detail" component={Detail} />

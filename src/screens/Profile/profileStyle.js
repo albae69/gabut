@@ -8,7 +8,7 @@ export const profileStyle = StyleSheet.create({
   wrapProfile: {flexDirection: 'row', padding: 16, alignItems: 'center'},
   title: {
     fontFamily: 'Nunito-Bold',
-    fontSize: 18,
+    fontSize: 16,
     color: '#43D9BE',
   },
   imgContainer: {alignItems: 'center', marginTop: 100},
@@ -18,7 +18,7 @@ export const profileStyle = StyleSheet.create({
     borderRadius: 80,
     backgroundColor: 'lightgray',
   },
-  text1: {fontFamily: 'Nunito-Bold', fontSize: 18, color: 'black'},
+  text1: {fontFamily: 'Nunito-Bold', fontSize: 14, color: 'black'},
   text2: {
     fontFamily: 'Nunito-Regular',
     fontSize: 16,
@@ -31,5 +31,10 @@ export const profileStyle = StyleSheet.create({
   },
   ml2: {
     marginLeft: 20,
+  },
+  loading: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

@@ -20,26 +20,16 @@ export const cartStyle = StyleSheet.create({
     paddingRight: 20,
     marginTop: 25,
   },
-  btn: {
-    width: 150,
-    marginTop: 0,
-    backgroundColor: 'red',
-  },
-  btnTitleStyle: {
-    fontSize: 12,
-  },
   wrapCard: {
     alignItems: 'center',
     marginTop: 20,
   },
   total: {
-    fontFamily: 'Nunito-Bold',
-    fontSize: 18,
+    fontFamily: 'Nunito-Regular',
+    fontSize: 14,
   },
   bottomNavContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    marginBottom: 20,
+    position: 'absolute',
+    bottom: 10,
   },
 });

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, ScrollView, Dimensions} from 'react-native';
 import {useSelector} from 'react-redux';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Header from '../../components/Header';
 import BottomNav from '../../components/BottomNav';
@@ -16,7 +17,19 @@ import smartphone from '../../assets/images/smartphone.jpg';
 const {width} = Dimensions.get('window');
 
 const Dashboard = ({navigation}) => {
-  const state = useSelector((state) => state);
+  const auth = useSelector((state) => state.auth);
+
+  const storeData = async (value) => {
+    try {
+      await AsyncStorage.setItem('isLogin', value);
+    } catch (e) {
+      //
+    }
+  };
+
+  if (auth.isLogin) {
+    storeData(JSON.stringify(auth.isLogin));
+  }
 
   const category = [
     {
@@ -45,9 +58,9 @@ const Dashboard = ({navigation}) => {
     <View style={dashboardStyle.container}>
       <Header
         navigation={navigation}
-        route={state.auth.isLogin ? 'profile' : 'login'}
+        route={auth.isLogin ? 'profile' : 'login'}
       />
-      <ScrollView>
+      <ScrollView showsHorizontalScrollIndicator={false}>
         <SwiperComponent />
 
         <ScrollView

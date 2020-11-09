@@ -1,9 +1,27 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Text, View} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useDispatch} from 'react-redux';
 
+import {login} from '../../../authSlice';
 import {splashStyle} from './splashStyle';
 
 const Splash = () => {
+  const dispatch = useDispatch();
+
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('isLogin');
+      return value != null ? dispatch(login()) : console.log('no data saved!');
+    } catch (e) {
+      // error reading value
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <View style={splashStyle.container}>
       <View style={splashStyle.brand}>
