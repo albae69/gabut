@@ -1,8 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const Items = {
-  items: null,
-};
+import data from './data.json';
+
+const Items = data.item;
 
 const items = createSlice({
   name: 'items',

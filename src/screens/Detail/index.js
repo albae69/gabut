@@ -11,14 +11,16 @@ import curlybraces from '../../assets/images/curlybraces.png';
 
 const {height, width} = Dimensions.get('window');
 
-const Detail = ({navigation}) => {
+const Detail = ({navigation, route}) => {
   const [wishList, setWishList] = useState(false);
   const isLogin = useSelector((state) => state.auth.isLogin);
+
+  let item = route.params;
 
   return (
     <View style={detailStyle.container}>
       <ImageBackground
-        source={curlybraces}
+        source={item.image == '' ? curlybraces : item.image}
         style={{height: height / 3, width: width}}>
         <BackButton
           title="DETAIL"
@@ -30,15 +32,15 @@ const Detail = ({navigation}) => {
           <Icons
             name="heart"
             size={25}
-            color={wishList ? 'red' : 'white'}
             onPress={() => setWishList(!wishList)}
             style={{position: 'absolute', bottom: 20, right: 20}}
+            color={item.wishlist ? 'red' : 'white'}
           />
         ) : (
           <Icons
             name="heart"
+            color={item.wishlist ? 'red' : 'white'}
             size={25}
-            color="white"
             style={{position: 'absolute', bottom: 20, right: 20}}
             onPress={() =>
               alert('you must login before add item into wishlist')
@@ -47,14 +49,11 @@ const Detail = ({navigation}) => {
         )}
       </ImageBackground>
       <View style={detailStyle.descContainer}>
-        <Text style={detailStyle.title}>Title</Text>
-        <Text style={detailStyle.price}>Price</Text>
-        <Text style={detailStyle.desc}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum,
-          tempore cupiditate! Debitis praesentium ut ipsam fugit neque quo
-          minima velit repellat iste quae ullam, modi ab laborum, odio impedit
-          nihil.
+        <Text style={detailStyle.title}>{item.title}</Text>
+        <Text style={detailStyle.price}>
+          Rp.{item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
         </Text>
+        <Text style={detailStyle.desc}>{item.description}</Text>
       </View>
       <View style={detailStyle.btnContainer}>
         <Button

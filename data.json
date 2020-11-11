@@ -1,0 +1,31 @@
+{
+  "item": [
+    {
+      "id": 1,
+      "title": "Laptop Dell Latitude e6410",
+      "price": 2750000,
+      "description": "dell latitude ialah laptop kerad pada zamannya. pokokna mah kerad euy.",
+      "wishlist": false,
+      "image": "",
+      "category": "Komputer"
+    },
+    {
+      "id": 2,
+      "title": "Xiaomi Redmi 4x",
+      "price": 1500000,
+      "description": "yak bemtul",
+      "wishlist": true,
+      "image": "",
+      "category": "Smartphone"
+    },
+    {
+      "id": 3,
+      "title": "Planet Ocean",
+      "price": 250000,
+      "description": "dompet aing sejak tempoe doeloe",
+      "wishlist": true,
+      "image": "",
+      "category": "Komputer"
+    }
+  ]
+}

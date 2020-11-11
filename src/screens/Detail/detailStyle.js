@@ -24,6 +24,7 @@ export const detailStyle = StyleSheet.create({
     fontFamily: 'Nunito-Regular',
     fontSize: 16,
     textAlign: 'left',
+    marginTop: 20,
   },
   btn1: {
     height: 40,

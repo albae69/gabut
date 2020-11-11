@@ -13,7 +13,7 @@ const Login = ({navigation}) => {
   const [loading, setLoading] = useState(false);
   const [input, setInput] = useState({
     email: 'ahmadalbaihaqi@gmail.com',
-    password: '',
+    password: 'kekw',
   });
 
   const dispatch = useDispatch();
@@ -63,7 +63,7 @@ const Login = ({navigation}) => {
         </View>
         <Button
           title="MASUK"
-          onPress={() => alert(JSON.stringify(input))}
+          onPress={logIn}
           loadingSize="small"
           loadingColor="white"
           isLoading={loading}

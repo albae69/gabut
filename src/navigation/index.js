@@ -20,7 +20,7 @@ const Stack = createStackNavigator();
 const BoardingStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="profile"
+      // initialRouteName="profile"
       headerMode="none"
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,

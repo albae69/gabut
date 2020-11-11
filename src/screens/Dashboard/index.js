@@ -10,6 +10,7 @@ import {Category, Item} from '../../components/Card';
 
 import {dashboardStyle} from './dashboardStyle';
 import laptop from '../../assets/images/laptop.jpg';
+import curly from '../../assets/images/curlybraces.png';
 import gaming from '../../assets/images/gaming.jpg';
 import pc from '../../assets/images/pc.jpg';
 import smartphone from '../../assets/images/smartphone.jpg';
@@ -18,6 +19,7 @@ const {width} = Dimensions.get('window');
 
 const Dashboard = ({navigation}) => {
   const auth = useSelector((state) => state.auth);
+  const items = useSelector((state) => state.items);
 
   const storeData = async (value) => {
     try {
@@ -82,10 +84,20 @@ const Dashboard = ({navigation}) => {
         </ScrollView>
 
         <View style={dashboardStyle.itemContainer}>
-          <Item />
-          <Item />
-          <Item />
-          <Item />
+          {items.map((item) => {
+            return (
+              <Item
+                onPress={() => navigation.navigate('detail', item)}
+                key={item.id}
+                title={item.title}
+                price={item.price
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+                wishlist={item.wishlist ? 'red' : 'white'}
+                image={item.image == '' ? curly : item.image}
+              />
+            );
+          })}
         </View>
       </ScrollView>
 
