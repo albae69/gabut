@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import React, {useState, useRef} from 'react';
+import {View, Text, TextInput} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {login} from '../../../authSlice';
 
-import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 
 import {loginStyle} from './loginStyle';
@@ -12,6 +11,10 @@ import {splashStyle} from '../Splash/splashStyle';
 
 const Login = ({navigation}) => {
   const [loading, setLoading] = useState(false);
+  const [input, setInput] = useState({
+    email: 'ahmadalbaihaqi@gmail.com',
+    password: '',
+  });
 
   const dispatch = useDispatch();
 
@@ -23,6 +26,8 @@ const Login = ({navigation}) => {
     }, 1000);
   };
 
+  const passwordRef = useRef();
+
   return (
     <View behavior="padding" style={loginStyle.container}>
       <View style={loginStyle.alignCenter}>
@@ -31,9 +36,24 @@ const Login = ({navigation}) => {
           <Text style={[splashStyle.subTitle, {color: '#43D9BE'}]}>
             GATAU, GABUT AJA.
           </Text>
-          <View style={loginStyle.inputContainer}>
-            <TextInput placeholder="email" />
-            <TextInput placeholder="password" secureTextEntry={true} />
+          <View style={{marginTop: 20}}>
+            <TextInput
+              style={loginStyle.input}
+              placeholder="email"
+              value={input.email}
+              onChangeText={(i) => setInput({...input, email: i})}
+              returnKeyType="next"
+              onSubmitEditing={() => passwordRef.current.focus()}
+              keyboardType="email-address"
+            />
+            <TextInput
+              style={loginStyle.input}
+              placeholder="password"
+              secureTextEntry={true}
+              ref={passwordRef}
+              value={input.password}
+              onChangeText={(i) => setInput({...input, password: i})}
+            />
             <Text
               style={loginStyle.forgotPassword}
               onPress={() => navigation.navigate('forgotPassword')}>
@@ -43,7 +63,7 @@ const Login = ({navigation}) => {
         </View>
         <Button
           title="MASUK"
-          onPress={logIn}
+          onPress={() => alert(JSON.stringify(input))}
           loadingSize="small"
           loadingColor="white"
           isLoading={loading}

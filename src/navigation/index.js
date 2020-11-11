@@ -20,6 +20,7 @@ const Stack = createStackNavigator();
 const BoardingStack = () => {
   return (
     <Stack.Navigator
+      initialRouteName="profile"
       headerMode="none"
       screenOptions={{
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
@@ -38,15 +39,15 @@ const BoardingStack = () => {
 const Navigation = () => {
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    const load = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-    return () => {
-      clearTimeout(load);
-    };
-  }, []);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   const load = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1000);
+  //   return () => {
+  //     clearTimeout(load);
+  //   };
+  // }, []);
 
   return (
     <NavigationContainer>

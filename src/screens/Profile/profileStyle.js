@@ -11,7 +11,7 @@ export const profileStyle = StyleSheet.create({
     fontSize: 16,
     color: '#43D9BE',
   },
-  imgContainer: {alignItems: 'center', marginTop: 100},
+  imgContainer: {alignItems: 'center', marginTop: 50},
   img: {
     height: 80,
     width: 80,
@@ -36,5 +36,9 @@ export const profileStyle = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  wrapEdit: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
 });

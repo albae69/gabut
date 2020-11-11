@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TextInput} from 'react-native';
 
-import TextInput from '../../components/TextInput';
 import Button from '../../components/Button';
 
 import {loginStyle} from '../Login/loginStyle';

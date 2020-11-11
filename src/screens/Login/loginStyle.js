@@ -8,8 +8,16 @@ export const loginStyle = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
   },
-  inputContainer: {
-    marginTop: 30,
+  input: {
+    height: 50,
+    width: 300,
+    borderWidth: 1,
+    borderColor: 'lightgray',
+    borderRadius: 10,
+    backgroundColor: 'white',
+    padding: 16,
+    marginTop: 20,
+    elevation: 4,
   },
   alignCenter: {
     marginTop: height / 5,
