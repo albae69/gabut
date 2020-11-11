@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -10,6 +10,7 @@ import {
 import Icons from 'react-native-vector-icons/AntDesign';
 import {useDispatch} from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import ImagePicker from 'react-native-image-picker';
 
 import {logout} from '../../../authSlice';
 import curly from '../../assets/images/curlybraces.png';
@@ -34,6 +35,30 @@ const Profile = ({navigation}) => {
     }
   };
 
+  // image picker
+  const options = {
+    title: 'Select Avatar',
+    storageOptions: {
+      skipBackup: true,
+      path: 'images',
+    },
+  };
+
+  const changePhoto = () => {
+    ImagePicker.showImagePicker(options, (response) => {
+      if (response.didCancel) {
+        console.log('User cancelled image picker');
+      } else if (response.error) {
+        console.log('ImagePicker Error: ', response.error);
+      } else if (response.customButton) {
+        console.log('User tapped custom button: ', response.customButton);
+      } else {
+        const source = {uri: response.uri};
+        setUser({...user, photo: source});
+      }
+    });
+  };
+
   return (
     <Pressable
       onPress={() => (visible == true ? setVisible(false) : null)}
@@ -49,7 +74,19 @@ const Profile = ({navigation}) => {
       </View>
       <View style={profileStyle.p}>
         <View style={profileStyle.imgContainer}>
-          <Image source={curly} style={profileStyle.img} />
+          <View>
+            <Image
+              source={user.photo == '' ? curly : user.photo}
+              style={profileStyle.img}
+            />
+            <Icons
+              onPress={changePhoto}
+              name="camera"
+              color="#43D9BE"
+              size={25}
+              style={{position: 'absolute', bottom: 5, right: 5}}
+            />
+          </View>
         </View>
         <View style={profileStyle.p}>
           <View style={profileStyle.p2}>
